@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>عجلة الاحتمالات</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    .wheel {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      margin: 30px auto;
+      border: 8px solid #2ecc71;
+      border-radius: 50%;
+      display: flex;
+      flex-wrap: wrap;
+      align-content: center;
+      justify-content: center;
+    }
+    .wheel button {
+      flex: 1 1 33.33%;
+      height: 100px;
+      font-size: 18px;
+      background: #ecf0f1;
+      border: 1px solid #bdc3c7;
+      cursor: pointer;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #e74c3c;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎯 عجلة الاحتمالات</h1>
+  <div class="wheel">
+    <button onclick="selectOption('ذرة')">ذرة</button>
+    <button onclick="selectOption('جمبري')">جمبري</button>
+    <button onclick="selectOption('بيتزا')">بيتزا</button>
+    <button onclick="selectOption('طماطم')">طماطم</button>
+    <button onclick="selectOption('تمر')">تمر</button>
+    <button onclick="selectOption('عسل')">عسل</button>
+    <button onclick="selectOption('ماء')">ماء</button>
+    <button onclick="selectOption('قهوة')">قهوة</button>
+    <button onclick="selectOption('بصل')">بصل</button>
+  </div>
+  <div id="result">اختر خيارًا من العجلة</div>
+
+  <script>
+    function selectOption(option) {
+      const now = new Date().toLocaleTimeString();
+      document.getElementById('result').innerText = `📌 اخترت: ${option} في الساعة ${now}`;
+    }
+  </script>
+</body>
+</html>
